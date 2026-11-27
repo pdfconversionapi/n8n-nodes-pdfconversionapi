@@ -1,6 +1,6 @@
 {
 	"name": "n8n-nodes-pdfconversionapi",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "n8n node for PDFConversionAPI: convert Word, Excel and PowerPoint files to PDF, and 550 single-file conversions in all, from a binary field to a binary field",
 	"license": "MIT",
 	"homepage": "https://pdfconversionapi.com",

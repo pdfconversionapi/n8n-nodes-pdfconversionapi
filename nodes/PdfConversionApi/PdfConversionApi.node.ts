@@ -87,8 +87,6 @@ function isBusy(status: number, message: string): boolean {
 	return status === 429 && /at a time|slow down/i.test(message);
 }
 
-// Not offered as an AI agent tool: it reads and writes binary files, which tool calls don't carry.
-// eslint-disable-next-line @n8n/community-nodes/node-usable-as-tool
 export class PdfConversionApi implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'PDFConversionAPI',
@@ -102,6 +100,8 @@ export class PdfConversionApi implements INodeType {
 		defaults: {
 			name: 'PDFConversionAPI',
 		},
+		// As an AI agent tool, Get Usage works as it is; Convert needs the file in a binary field of the item.
+		usableAsTool: true,
 		inputs: [NodeConnectionTypes.Main],
 		outputs: [NodeConnectionTypes.Main],
 		credentials: [
