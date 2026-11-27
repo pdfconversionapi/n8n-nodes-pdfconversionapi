@@ -84,7 +84,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 'lts/*'
-          cache: 'npm'
+          registry-url: 'https://registry.npmjs.org'
+          # No dependency cache in release builds (npm's trusted publishing docs).
+          # setup-node v4 caches only when `cache` is set, so it is left out here.
 
       - name: Install dependencies
         run: 'npm ci'
